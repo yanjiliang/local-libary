@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h1 Hi #{genre.name}
+
+    div(style='margin-left: 20px;margin-top:20px')
+
+        h2(style='font-size:1.5rem') Books
+
+        if book_in_genre.length
+            dl
+               each book in book_in_genre
+                   dt
+                       a(href=book.url) #{book.title}
+                   dd #{book.summary}
+
+        else
+           p No books in this genre.
